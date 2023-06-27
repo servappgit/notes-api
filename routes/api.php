@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/notes', 'App\Http\Controllers\NoteController@store');
 Route::get('/notes', 'App\Http\Controllers\NoteController@index');
 Route::get('/notes/{id}', 'App\Http\Controllers\NoteController@show');
+Route::put('/notes/{id}', [NoteController::class, 'update'])->name('notes.update');
+Route::delete('/notes/{id}', [NoteController::class, 'destroy'])->name('notes.destroy');
